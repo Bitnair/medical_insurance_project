@@ -32,10 +32,13 @@ def analyze_smoker(smoker_status):
         
 # Function that analyzes an individual’s BMI (body mass index):
 def analyze_bmi(bmi_value):
+    bmi_value_to_lower = bmi_value - 22   # BMI value to lower in order to bring it to a normal weight range
     if bmi_value > 30:
         print('Your BMI is in the obese range. To lower your cost, you should significantly lower your BMI.')
+        print('In order to reach a healthy weight range, you would have to lower your BMI by ' + str(round(bmi_value_to_lower, 1)) + ' points')
     elif bmi_value >= 25 and bmi_value <= 30:
         print('Your BMI is in the overweight range. To lower your cost, you should lower your BMI.')
+        print('In order to reach a healthy weight range, you would have to lower your BMI by ' + str(round(bmi_value_to_lower, 1)) + ' points')
     elif bmi_value >= 18.5 and bmi_value < 25:
         print('Your BMI is in a healthy range.')
     else:
@@ -53,6 +56,4 @@ def estimate_insurance_cost(name, age, sex, bmi, num_of_children, smoker):
 keanu_insurance_cost = estimate_insurance_cost(name = 'Keanu', age = 29, sex = 1, bmi = 26.2, num_of_children = 3, smoker = 1)
 
 # Estimate my insurance cost:
-geoffrey_insurance_cost = estimate_insurance_cost(name = 'Geoffrey', age = 36, sex = 1, bmi = 26.2, num_of_children = 0, smoker = 0)
-
-bmi_calculation(68, 1.65)
+geoffrey_insurance_cost = estimate_insurance_cost(name = 'Geoffrey', age = 36, sex = 1, bmi = 24, num_of_children = 0, smoker = 0)
